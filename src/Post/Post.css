@@ -1,0 +1,10 @@
+.Post {
+    width: 80%;
+    background-color: lightgrey;
+    align-items: center;
+    margin: auto;
+}
+
+.Photo {
+    width: 100% ;
+}

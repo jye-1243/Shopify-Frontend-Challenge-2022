@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import Post from './Post/Post';
 
 const key = 'CWosxwH7OrcfEmkDYwoK4xGrVPzvlLNf6wCEu5Ro';
 
@@ -32,9 +33,8 @@ function App() {
   return (
     <div className="App">
       <h1> Spacestagram </h1>
-      <p>{items.url}</p> 
-      {items.map((item) => 
-      <img src={item.hdurl}></img> )}
+      {items.map((item) => item.media_type === "video" ? null :
+      <Post data={item} key={item.hdurl}/> )}
     </div>
   );
 }
