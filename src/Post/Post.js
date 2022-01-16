@@ -8,9 +8,18 @@ function Post(props) {
 
     return (
         <div className="Post">
-            <h2> {data.title} </h2>
-            <p>By: {data.copyright}</p>
-            <img className="Photo" src={data.hdurl}/> 
+            <div className="info-bar">
+                <h1> {data.title} </h1>
+                <p>By: {data.copyright}</p> 
+                <p> Photo of the Day for: {data.date} </p> 
+            </div> 
+            <div className='img-container'>
+                <img className="Photo" src={data.hdurl}/> 
+                <p>{data.explanation} </p> 
+            </div>
+            <div className="like-bar">
+                <button className={liked ? "unlike-button" : "like-button"} onClick={() => setLiked(!liked)}> {liked ? "Unlike" : "Like" } </button>
+            </div> 
         </div>
     );
 }

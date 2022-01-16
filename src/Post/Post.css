@@ -1,10 +1,49 @@
 .Post {
-    width: 80%;
-    background-color: lightgrey;
+    width: 30%;
+    background-color: #ccd4ec;
     align-items: center;
+    margin: 20px auto;
+    border-radius: 3px;
+    border: 1px solid #434c68;
+}
+
+.img-container {
     margin: auto;
+    width: 80% ;
 }
 
 .Photo {
-    width: 100% ;
+    width: 100%;
+}
+
+.like-button {
+    width: 30%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #434c68;
+}
+
+.unlike-button {
+    width: 30%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #434c68;
+    color: white;
+    background-color: #434c68;
+}
+
+.like-bar {
+    margin: 10px;
+}
+
+h1 {
+    margin: 10px 10px 0px 10px;
+}
+
+p {
+    margin: 0px;
+}
+
+.info-bar {
+    margin-bottom: 5px;
 }
