@@ -6,6 +6,7 @@ function Post(props) {
     const [liked, setLiked] = useState(false);
     const data = props.data;
 
+console.log(data);
     return (
         <div className="Post">
             <div className="info-bar">
@@ -14,7 +15,9 @@ function Post(props) {
                 <p> Photo of the Day for: {data.date} </p> 
             </div> 
             <div className='img-container'>
-                <img className="Photo" src={data.hdurl}/> 
+                {data.media_type === "image" ? <img className="Photo" src={data.hdurl} alt={data.title}/> 
+                :
+                <p>The media for this post is not an image, and could not be loaded properly.</p>}
                 <p>{data.explanation} </p> 
             </div>
             <div className="like-bar">

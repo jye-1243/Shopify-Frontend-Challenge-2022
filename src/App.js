@@ -17,16 +17,20 @@ function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]); 
+  const [liked, setLiked] = useState([]);
 
   useEffect(() => {
     const searchDate = queryParams.get('date');
     var query = `https://api.nasa.gov/planetary/apod?api_key=${key}&end_date=${dateString}&start_date=${prevDateString}`;
     if (searchDate) {
-      if (moment(searchDate,'YYYY-MM-DD', true).isValid()) {
+      if (moment(searchDate,'YYYY-MM-DD', true).isValid() && moment(searchDate) >= moment('1995-06-16') && moment(searchDate) <= moment(currDate)) {
         query = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${searchDate}`
       }
+      else if ((moment(searchDate,'YYYY-MM-DD', true).isValid())) {
+        alert("There is no data for the searched date");
+      }
       else {
-        alert("The searched date is not in the proper format")
+        alert("The searched date is not in the proper format");
       }
     }
     fetch(query)
@@ -53,8 +57,7 @@ function App() {
       <TopBar/>
       <div className="body"> 
         <div>
-          {items.map((item) => item.media_type === "image" ? 
-            <Post data={item} key={item.hdurl}/>  : null)}
+          {items.map((item) => <Post data={item} key={item.date}/>)}
         </div>
 
       </div>
