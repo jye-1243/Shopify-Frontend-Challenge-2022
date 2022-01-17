@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Post from './Post/Post';
 import TopBar from './TopBar'
+import SideBar from './SideBar'
 import moment from 'moment';
 
 const key = 'CWosxwH7OrcfEmkDYwoK4xGrVPzvlLNf6wCEu5Ro';
@@ -20,6 +21,9 @@ function App() {
   const [liked, setLiked] = useState([]);
 
   useEffect(() => {
+    if (window.sessionStorage.getItem("spacestagram-liked-photos")) { 
+      setLiked(JSON.parse(window.sessionStorage.getItem("spacestagram-liked-photos")));
+    }
     const searchDate = queryParams.get('date');
     var query = `https://api.nasa.gov/planetary/apod?api_key=${key}&end_date=${dateString}&start_date=${prevDateString}`;
     if (searchDate) {
@@ -47,6 +51,18 @@ function App() {
       )
   }, [])
 
+  useEffect(() => {
+    window.sessionStorage.setItem("spacestagram-liked-photos", JSON.stringify(liked));
+  }, [liked]);
+
+  function handleLike(date) {
+    setLiked(liked => [...liked, date]);
+  }
+
+  function handleUnlike(date) {
+    setLiked(liked => liked.filter((d) => d.date !== date));
+  }
+
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
@@ -56,10 +72,18 @@ function App() {
     <div className="App">
       <TopBar/>
       <div className="body"> 
-        <div>
-          {items.map((item) => <Post data={item} key={item.date}/>)}
+        <div className="post-div">
+          
+          {items.map((item) => 
+            <Post data={item} 
+                  key={item.date} 
+                  handleLike={handleLike} 
+                  handleUnlike={handleUnlike}
+                  liked={liked.some((d) => d.date === item.date)}/>)}
         </div>
-
+        <div className="side-bar-container">
+          <SideBar likes={liked}/>
+        </div>
       </div>
 
     </div>

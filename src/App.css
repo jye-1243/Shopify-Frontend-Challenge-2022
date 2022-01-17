@@ -77,4 +77,33 @@ h3 {
 
 .body {
   margin-top: 100px;
+  display: flex;
+  columns: 2;
+}
+
+.side-bar-container{
+  background-color: #d7d7d7;
+  width: 25%;
+  margin-left: 70%;
+  margin-right: 5%;
+  height: 70%;
+  margin-top: 20px;
+  border-radius: 8px;
+  position: fixed;
+
+}
+
+.post-div {
+  width: 65%;
+}
+
+.sidebar-div {
+  margin: 10px;
+}
+
+.sidebar {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  overflow: auto;
+  height: 100%;
 }

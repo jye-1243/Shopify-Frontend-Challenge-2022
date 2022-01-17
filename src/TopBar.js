@@ -1,9 +1,6 @@
-import { useState } from 'react';
 import './App.css'
 
-function TopBar(props) {
-
-
+function TopBar() {
 
     return (
         <div className="top-bar">

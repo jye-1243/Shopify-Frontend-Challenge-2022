@@ -3,15 +3,14 @@ import './Post.css';
 
 function Post(props) {
 
-    const [liked, setLiked] = useState(false);
+    const [liked, setLiked] = useState(props.liked);
     const data = props.data;
 
-console.log(data);
     return (
         <div className="Post">
             <div className="info-bar">
                 <h1> {data.title} </h1>
-                <p>By: {data.copyright}</p> 
+                <p> {data.copyright ? "By: " + data.copyright : ""}</p> 
                 <p> Photo of the Day for: {data.date} </p> 
             </div> 
             <div className='img-container'>
@@ -21,7 +20,16 @@ console.log(data);
                 <p>{data.explanation} </p> 
             </div>
             <div className="like-bar">
-                <button className={liked ? "unlike-button" : "like-button"} onClick={() => setLiked(!liked)}> {liked ? "Unlike" : "Like" } </button>
+                <button className={liked ? "unlike-button" : "like-button"} onClick={() => {
+                    const prevLiked = liked;
+                    setLiked(!liked);
+                    if (prevLiked) {
+                        props.handleUnlike(data.date);
+                    }
+                    else {
+                        props.handleLike({date: data.date, title: data.title, byline: data.copyright})
+                    } }
+                    }> {liked ? "Unlike" : "Like" } </button>
             </div> 
         </div>
     );
