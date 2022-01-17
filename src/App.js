@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Post from './Post/Post';
-import TopBar from './TopBar'
-import SideBar from './Sidebar/SideBar'
+import TopBar from './TopBar/TopBar'
+import Sidebar from './Sidebar/Sidebar'
 import moment from 'moment';
+import config from './config.js';
 
-const key = 'CWosxwH7OrcfEmkDYwoK4xGrVPzvlLNf6wCEu5Ro';
+const key = config.key;
 const currDate = new Date();
 const dateString = currDate.toISOString().slice(0,10);
-const prevDate = new Date()
+const prevDate = new Date();
 prevDate.setDate(prevDate.getDate() - 10);
 const prevDateString = prevDate.toISOString().slice(0,10);
 
@@ -30,7 +31,7 @@ function App() {
     var query = `https://api.nasa.gov/planetary/apod?api_key=${key}&end_date=${dateString}&start_date=${prevDateString}`;
     if (searchDate) {
       if (moment(searchDate,'YYYY-MM-DD', true).isValid() && moment(searchDate) >= moment('1995-06-16') && moment(searchDate) <= moment(currDate)) {
-        query = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${searchDate}`
+        query = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${searchDate}`;
         setSearched(true);
       }
       else if ((moment(searchDate,'YYYY-MM-DD', true).isValid())) {
@@ -85,7 +86,7 @@ function App() {
                   liked={liked.some((d) => d.date === item.date)}/>)}
         </div>
         <div className="side-bar-container">
-          <SideBar likes={liked}/>
+          <Sidebar likes={liked}/>
         </div>
       </div>
 

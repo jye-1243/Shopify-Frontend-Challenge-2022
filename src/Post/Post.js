@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './Post.css';
 
 function Post(props) {
@@ -7,7 +7,7 @@ function Post(props) {
     const data = props.data;
 
     return (
-        <div className="Post">
+        <div className="Post" key={data.date}>
             <div className="info-bar">
                 <h1> {data.title} </h1>
                 <p> {data.copyright ? "By: " + data.copyright : ""}</p> 

@@ -1,15 +1,14 @@
-import './../App.css'
+import './Sidebar.css'
 import LikedMarker from './LikedMarker';
 
-function SideBar(props) {
+function Sidebar(props) {
     const likes = props.likes;
-
     return (
         <div className="sidebar">
             <h2> Your Liked Photos </h2>          
-            {likes.map((d) => <LikedMarker data={d}/>)}  
+            {likes.map((d) => <LikedMarker data={d} key={d.date}/>)}  
         </div>
     );
 }
 
-export default SideBar;
+export default Sidebar;

@@ -1,7 +1,6 @@
-import './App.css'
+import './TopBar.css'
 
 function TopBar() {
-
     return (
         <div className="top-bar">
             <div className="top-bar-fill"> 
