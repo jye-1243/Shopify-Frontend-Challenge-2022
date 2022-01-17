@@ -2,6 +2,7 @@
   "name": "shopify-frontend-2022",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jye-1243.github.io/Shopify-Frontend-Challenge/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
