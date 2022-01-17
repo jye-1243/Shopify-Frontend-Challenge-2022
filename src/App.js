@@ -5,6 +5,7 @@ import TopBar from './TopBar/TopBar'
 import Sidebar from './Sidebar/Sidebar'
 import moment from 'moment';
 import config from './config.js';
+import load from './load.png';
 
 const key = config.key;
 const currDate = new Date();
@@ -70,7 +71,16 @@ function App() {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return (
+      <div className="App"> 
+        <TopBar/>
+        <div className='load-screen'>
+          <img src={load} className="load-icon" alt="Loading..." />
+          <h1 className="load-title"> Loading... </h1>
+        </div>
+      </div>
+
+    );
   }
   return (
     <div className="App">
