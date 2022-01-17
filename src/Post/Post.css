@@ -32,6 +32,14 @@
     background-color: #434c68;
 }
 
+.unlike-button:hover {
+    background-color: #333c58;
+}
+
+.like-button:hover {
+    background-color: #c6d1f0;
+}
+
 .like-bar {
     margin: 10px;
 }

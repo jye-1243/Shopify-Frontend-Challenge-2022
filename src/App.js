@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Post from './Post/Post';
 import TopBar from './TopBar'
-import SideBar from './SideBar'
+import SideBar from './Sidebar/SideBar'
 import moment from 'moment';
 
 const key = 'CWosxwH7OrcfEmkDYwoK4xGrVPzvlLNf6wCEu5Ro';
@@ -19,8 +19,10 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]); 
   const [liked, setLiked] = useState([]);
+  const [searched, setSearched] = useState(false);
 
   useEffect(() => {
+    setSearched(false);
     if (window.sessionStorage.getItem("spacestagram-liked-photos")) { 
       setLiked(JSON.parse(window.sessionStorage.getItem("spacestagram-liked-photos")));
     }
@@ -29,6 +31,7 @@ function App() {
     if (searchDate) {
       if (moment(searchDate,'YYYY-MM-DD', true).isValid() && moment(searchDate) >= moment('1995-06-16') && moment(searchDate) <= moment(currDate)) {
         query = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${searchDate}`
+        setSearched(true);
       }
       else if ((moment(searchDate,'YYYY-MM-DD', true).isValid())) {
         alert("There is no data for the searched date");
@@ -73,7 +76,7 @@ function App() {
       <TopBar/>
       <div className="body"> 
         <div className="post-div">
-          
+          {searched ? <form> <button className='nav-button' id='back-button'> Back to Recent Images </button> </form> : <h2> Recent Images </h2> }
           {items.map((item) => 
             <Post data={item} 
                   key={item.date} 

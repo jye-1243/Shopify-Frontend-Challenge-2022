@@ -107,3 +107,18 @@ h3 {
   overflow: auto;
   height: 100%;
 }
+
+.nav-button {
+    width: 30%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #434c68;
+}
+
+.nav-button:hover {
+  background-color:#ccd4ec;
+}
+
+#back-button {
+  border: 0px;
+}
