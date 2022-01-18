@@ -5,7 +5,7 @@ function Sidebar(props) {
     const likes = props.likes;
     return (
         <div className="sidebar">
-            <h2> Your Liked Photos </h2>          
+            <h2 className="sidebar-title"> Your Liked Photos </h2>          
             {likes.map((d) => <LikedMarker data={d} key={d.date}/>)}  
         </div>
     );

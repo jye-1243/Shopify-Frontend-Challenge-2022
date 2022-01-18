@@ -9,7 +9,7 @@ function Post(props) {
     return (
         <div className="Post" key={data.date}>
             <div className="info-bar">
-                <h1> {data.title} </h1>
+                <h1 className="post-title"> {data.title} </h1>
                 <p> {data.copyright ? "By: " + data.copyright : ""}</p> 
                 <p> Photo of the Day for: {data.date} </p> 
             </div> 

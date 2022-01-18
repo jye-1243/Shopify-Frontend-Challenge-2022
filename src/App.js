@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Post from './Post/Post';
 import TopBar from './TopBar/TopBar'
-import Sidebar from './Sidebar/Sidebar'
+import Sidebar from './Sidebar/SideBar'
 import moment from 'moment';
-import config from './config.js';
+import config from './config.json';
 import load from './load.png';
 
 const key = config.key;

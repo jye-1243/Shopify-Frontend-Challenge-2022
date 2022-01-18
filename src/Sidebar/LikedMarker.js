@@ -5,7 +5,7 @@ function LikedMarker(props) {
     
     return (
         <div key={d.date} className="sidebar-div">
-            <h3> {d.title} </h3>
+            <h3 className="liked-title"> {d.title} </h3>
             <p> {d.byline ? "By: " + d.byline : ""} </p> 
             <p> {d.date} </p>
             <div className="button-row"> 

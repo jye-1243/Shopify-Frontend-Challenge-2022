@@ -2,7 +2,7 @@
     width: 70%;
     background-color: #ccd4ec;
     align-items: center;
-    margin: 20px auto;
+    margin: 10px auto;
     border-radius: 3px;
     border: 1px solid #434c68;
 }
@@ -44,12 +44,14 @@
     margin: 10px;
 }
 
-h1 {
+.post-title {
     margin: 10px 10px 0px 10px;
+    font-size: 30px;
 }
 
 p {
     margin: 0px;
+    font-size: 14px;
 }
 
 .info-bar {
