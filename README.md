@@ -9,6 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Demo
 A demo of the app can be accessed [here](https://jye-1243.github.io/Shopify-Frontend-Challenge-2022/).
 
+A screenshot of the demo is also attached below.
 ![Screenshot of the interface](https://github.com/jye-1243/Shopify-Frontend-Challenge-2022/blob/main/DemoScreenshot.PNG)
 
 ## Getting Started
