@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Shopify Frontend Challenge 2022
+Shopify Summer 2022 Internship Frontend Challenge
 
+This web application--"Spacestagram"--is an easy-to-use image display interface that gets images from NASA's Astronomy Picture of the Day (APOD) API and displays them, allowing users to scroll through, like and unlike posts, and search for specific dates.
+
+### About the Project
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Demo
+A demo of the app can be accessed [here](https://jye-1243.github.io/Shopify-Frontend-Challenge-2022/).
 
-In the project directory, you can run:
+## Getting Started
 
-### `yarn start`
+### Prerequisites
+This front-end web app was built with ReactJS. The requirements to run a React App can be installed by following the instructions [here](https://www.techomoro.com/how-to-install-and-setup-a-react-app-on-windows-10/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone this [git repository](https://github.com/jye-1243/Shopify-Frontend-Challenge-2022)
+2. Register for an API key from [NASA](https://api.nasa.gov/)
+3. Navigate to the `src` folder in your clone repository, and create a file called `config.json`
+4. Within the new file, create a JSON object with value `{key : YOUR_KEY_HERE}`, where YOUR_KEY_HERE is your NASA API key.
+5. Export your `config.js` file
 
-### `yarn test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run the app, navigate to the appropriate directory and run `npm start`. The app will load in http://localhost:3000/.
+By default, the web application displays the ten most recent APOD results in reverse chronological order. The user may like and unlike each post as desired. An additional feature that was added to the base requirements is the sidebar, which tracks which photos have been liked and allows users to revisit them. Furthermore, there is a search functionality at the top of the page. The user may enter a YYYY-MM-DD formatted string for the APOD request corresponding to the entered date; if the user enters a date out of range or in the wrong format, an alert will be made and the user will be redirected to the default home screen.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
