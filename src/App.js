@@ -29,10 +29,10 @@ function App() {
       setLiked(JSON.parse(window.sessionStorage.getItem("spacestagram-liked-photos")));
     }
     const searchDate = queryParams.get('date');
-    var query = `https://api.nasa.gov/planetary/apod?api_key=${key}&end_date=${dateString}&start_date=${prevDateString}`;
+    var query = `https://api.nasa.gov/planetary/apod?api_key=${key}&end_date=${dateString}&start_date=${prevDateString}&thumbs=true`;
     if (searchDate) {
       if (moment(searchDate,'YYYY-MM-DD', true).isValid() && moment(searchDate) >= moment('1995-06-16') && moment(searchDate) <= moment(currDate)) {
-        query = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${searchDate}`;
+        query = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${searchDate}&thumbs=true`;
         setSearched(true);
       }
       else if ((moment(searchDate,'YYYY-MM-DD', true).isValid())) {

@@ -16,7 +16,7 @@ function Post(props) {
             <div className='img-container'>
                 {data.media_type === "image" ? <img className="Photo" src={data.hdurl} alt={data.title}/> 
                 :
-                <p>The media for this post is not an image, and could not be loaded properly.</p>}
+                <img className="Photo" src={data.thumbnail_url} alt={data.title}/> }
                 <p>{data.explanation} </p> 
             </div>
             <div className="like-bar">
